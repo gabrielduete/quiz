@@ -1,8 +1,8 @@
 // Questões do quiz.
 quest1 = ["Qual foi o primeiro computador totalmente programável?"]
 quest2 = [" Qual foi o(a) primeiro(a) progamdor(a) do Mundo?"]
-quest3 = [""]
-quest4 = [""]
+quest3 = ["Quem é considerado o pai da computação?"]
+quest4 = ["Qual foi o primeiro computador pessoal moderno?"]
 quest5 = [""]
 quest6 = [""]
 quest7 = [""]
@@ -11,16 +11,16 @@ quest9 = [""]
 quest10 = [""]
 
 //Respostas correspondente a cada questão. -> 
-resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"]
-resp2 = []
-resp3 = []
-resp4 = []
-resp5 = []
-resp6 = []
-resp7 = []
-resp8 = []
-resp9 = []
-resp10 = []
+resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"] // CORRETA -> 0
+resp2 = ["Margaret Hamilton","Alan Turing","Condessa de Lovelace","Bill Gates"] // CORRETA -> 2
+resp3 = ["Alan Turing","Bill Gates","Steve Jobs","Charles Babbage"] // Correta -> 0
+resp4 = ["Apple I","IBM 5150","EDVAC",""] //
+resp5 = ["","","",""] //
+resp6 = ["","","",""] //
+resp7 = ["","","",""] //
+resp8 = ["","","",""] //
+resp9 = ["","","",""] //
+resp10 = ["","","",""] //
 
 //Ordem da Questão /
 ord1 = ["Questão 1/10"]
@@ -34,12 +34,16 @@ ord8 = ["Questão 8/10"]
 ord9 = ["Questão 9/10"]
 ord10 = ["Questão 10/10"]
 
+// Variaveis
 var perg = document.querySelector('h2')
 var ordem = document.querySelector('p')
 var botaom1 = document.querySelector('button#botao1')
 var botaom2 = document.querySelector('button#botao2')
 var botaom3 = document.querySelector('button#botao3')
 var botaom4 = document.querySelector('button#botao4')
+
+
+//Funções
 
 function teste(){
     perg.innerHTML = quest1
@@ -52,7 +56,14 @@ function teste(){
 }
 
 function clicouBotao(botaoClicado){
-    if (botaoClicado == resp1[0]){
-        console.log('teste')
+    botaom1.value = resp1[0]
+    botaom2.value = resp1[1]
+    botaom3.value = resp1[2]
+    botaom4.value = resp1[3]
+    if (botaoClicado.value == resp1[0]){
+        document.querySelector('button#botao1').style.backgroundColor = 'rgb(13, 220, 13)'
+    }else{
+        /*esse botão clicado ficar vermelho*/
     }
 }
+
