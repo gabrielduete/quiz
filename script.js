@@ -34,19 +34,25 @@ ord8 = ["Questão 8/10"]
 ord9 = ["Questão 9/10"]
 ord10 = ["Questão 10/10"]
 
+var perg = document.querySelector('h2')
+var ordem = document.querySelector('p')
+var botaom1 = document.querySelector('button#botao1')
+var botaom2 = document.querySelector('button#botao2')
+var botaom3 = document.querySelector('button#botao3')
+var botaom4 = document.querySelector('button#botao4')
 
 function teste(){
-    var perg = document.querySelector('h2')
-    var ordem = document.querySelector('p')
-    var res1 = document.querySelector('button#botao1')
-    var res2 = document.querySelector('button#botao2')
-    var res3 = document.querySelector('button#botao3')
-    var res4 = document.querySelector('button#botao4')
-
     perg.innerHTML = quest1
     ordem.innerHTML = ord1
-    res1.innerHTML = resp1[0]
-    res2.innerHTML = resp1[1]
-    res3.innerHTML = resp1[2]
-    res4.innerHTML = resp1[3]
+    botaom1.innerHTML = resp1[0]
+    botaom2.innerHTML = resp1[1]
+    botaom3.innerHTML = resp1[2]
+    botaom4.innerHTML = resp1[3]
+
+}
+
+function clicouBotao(botaoClicado){
+    if (botaoClicado == resp1[0]){
+        console.log('teste')
+    }
 }
