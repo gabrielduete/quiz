@@ -41,6 +41,8 @@ var botaom1 = document.querySelector('button#botao1')
 var botaom2 = document.querySelector('button#botao2')
 var botaom3 = document.querySelector('button#botao3')
 var botaom4 = document.querySelector('button#botao4')
+var proxima = document.querySelector('button#ProximaQuest')
+var checaBotaoClicado = false
 
 
 //Funções
@@ -63,7 +65,9 @@ function clicouBotao(botaoClicado){
     if (botaoClicado.value == resp1[0]){
         document.querySelector('button#botao1').style.backgroundColor = 'rgb(13, 220, 13)'
     }else{
-        /*esse botão clicado ficar vermelho*/
+        botaoClicado.style.backgroundColor = 'red'
     }
+    document.getElementById('ProximaQuest').style.visibility = 'visible'
+    document.getElementById('ProximaQuest').style.display = 'inline'
 }
 
