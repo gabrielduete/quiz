@@ -45,22 +45,21 @@ var proxima = document.querySelector('button#ProximaQuest')
 var checaBotaoClicado = false
 
 
-//Funções;
-function teste(){
-    perg.innerHTML = quest1
-    ordem.innerHTML = ord1
-    botaom1.innerHTML = resp1[0]
-    botaom2.innerHTML = resp1[1]
-    botaom3.innerHTML = resp1[2]
-    botaom4.innerHTML = resp1[3]
-}
+// Mudança inicial;
+perg.innerHTML = quest1
+ordem.innerHTML = ord1
+botaom1.innerHTML = resp1[0]
+botaom2.innerHTML = resp1[1]
+botaom3.innerHTML = resp1[2]
+botaom4.innerHTML = resp1[3]
 
-function clicouBotao(botaoClicado){
-    botaom1.value = resp1[0]
-    botaom2.value = resp1[1]
-    botaom3.value = resp1[2]
-    botaom4.value = resp1[3]
-    if (botaoClicado.value == resp1[0]){
+//Funções;
+function clicouBotao(botaoClicado,array=resp1,indiceCerto=0){
+    botaom1.value = array[0]
+    botaom2.value = array[1]
+    botaom3.value = array[2]
+    botaom4.value = array[3]
+    if (botaoClicado.value == array[indiceCerto]){
         botaoClicado.style.backgroundColor = 'rgb(13, 220, 13)'
         botaoClicado.style.color = 'black'
 
@@ -70,5 +69,34 @@ function clicouBotao(botaoClicado){
     }
     document.getElementById('ProximaQuest').style.visibility = 'visible'
     document.getElementById('ProximaQuest').style.display = 'inline'
-    
+    botaom1.setAttribute('disabled','disabled')
+    botaom2.setAttribute('disabled','disabled')
+    botaom3.setAttribute('disabled','disabled')
+    botaom4.setAttribute('disabled','disabled')
+}
+
+function limpaBotao(){
+    botaom1.setAttribute('enable','enable')
+    botaom2.setAttribute('enable','enable')
+    botaom3.setAttribute('enable','enable')
+    botaom4.setAttribute('enable','enable')
+    botaom1.style.backgroundColor = 'white'
+    botaom2.style.backgroundColor = 'white'
+    botaom3.style.backgroundColor = 'white'
+    botaom4.style.backgroundColor = 'white'
+    botaom1.style.color = 'black'
+    botaom2.style.color = 'black'
+    botaom3.style.color = 'black'
+    botaom4.style.color = 'black'
+}
+
+function proximaQuestao(botaoClicado){
+    limpaBotao()
+    perg.innerHTML = quest2
+    ordem.innerHTML = ord2
+    botaom1.innerHTML = resp2[0]
+    botaom2.innerHTML = resp2[1]
+    botaom3.innerHTML = resp2[2]
+    botaom4.innerHTML = resp2[3]
+    clicouBotao(botaoClicado,resp2,2)
 }
