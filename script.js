@@ -14,7 +14,7 @@ quest10 = [""]
 resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"] // CORRETA -> 0
 resp2 = ["Margaret Hamilton","Alan Turing","Condessa de Lovelace","Bill Gates"] // CORRETA -> 2
 resp3 = ["Alan Turing","Bill Gates","Steve Jobs","Charles Babbage"] // Correta -> 0
-resp4 = ["Apple I","IBM 5150","EDVAC","Jaguar"] // CORRETA -> 3
+resp4 = ["Apple I","IBM 5150","EDVAC","Jaguar"] // CORRETA -> 1
 resp5 = ["EDVAC","Apple I","Macintosh","Jaguar"] // CORRETA -> 4
 resp6 = ["","","",""] //
 resp7 = ["","","",""] //
@@ -34,7 +34,7 @@ ord8 = ["Questão 8/10"]
 ord9 = ["Questão 9/10"]
 ord10 = ["Questão 10/10"]
 
-sequenciaResposta = [ 0, 2, 0, 3, 4 ]
+sequenciaResposta = [ 0, 2, 0, 1, 4 ]
 
 // Variaveis;
 var perg = document.querySelector('h2')
@@ -58,9 +58,9 @@ botaom4.innerHTML = resp1[3]
 //Funções;
 function clicouBotao(botaoClicado) {
     let indexNumber = Number(index.value)
-    let indexAnswer = sequenciaResposta[Number(index.value)]
-    
-    if (botaoClicado == window["resp" + [indexNumber][indexAnswer]]){
+    let indexAnswer = sequenciaResposta[Number(index.value) - 1]
+
+    if (botaoClicado.innerHTML == window["resp" + indexNumber][indexAnswer]){
         botaoClicado.style.backgroundColor = 'rgb(13, 220, 13)'
         botaoClicado.style.color = 'black'
         console.log('acertou')
@@ -96,8 +96,6 @@ function limpaBotao(){
 
 function proximaQuestao(){
     index.value = Number(index.value) + 1
-    respostaCorreta.value = sequenciaResposta[Number(index.value) - 1]
-    respostaCorreta.value = sequenciaResposta[Number(index.value) - 1]
     limpaBotao()
     perg.innerHTML = window["quest" + index.value]
     ordem.innerHTML = window["ord" + index.value]
