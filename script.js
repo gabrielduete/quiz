@@ -14,7 +14,7 @@ quest10 = [""]
 resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"] // CORRETA -> 0
 resp2 = ["Margaret Hamilton","Alan Turing","Condessa de Lovelace","Bill Gates"] // CORRETA -> 2
 resp3 = ["Alan Turing","Bill Gates","Steve Jobs","Charles Babbage"] // Correta -> 0
-resp4 = ["Apple I","IBM 5150","EDVAC",""] // CORRETA -> 3
+resp4 = ["Apple I","IBM 5150","EDVAC","Jaguar"] // CORRETA -> 3
 resp5 = ["EDVAC","Apple I","Macintosh","Jaguar"] // CORRETA -> 4
 resp6 = ["","","",""] //
 resp7 = ["","","",""] //
@@ -34,6 +34,8 @@ ord8 = ["Questão 8/10"]
 ord9 = ["Questão 9/10"]
 ord10 = ["Questão 10/10"]
 
+sequenciaResposta = [ 0, 2, 0, 3, 4 ]
+
 // Variaveis;
 var perg = document.querySelector('h2')
 var ordem = document.querySelector('p')
@@ -42,7 +44,7 @@ var botaom2 = document.querySelector('button#botao2')
 var botaom3 = document.querySelector('button#botao3')
 var botaom4 = document.querySelector('button#botao4')
 var proxima = document.querySelector('button#ProximaQuest')
-var checaBotaoClicado = false
+var index = document.querySelector('input#index')
 
 
 // Mudança inicial;
@@ -54,15 +56,14 @@ botaom3.innerHTML = resp1[2]
 botaom4.innerHTML = resp1[3]
 
 //Funções;
-function clicouBotao(botaoClicado,array=resp1,indiceCerto=0){
-    botaom1.value = array[0]
-    botaom2.value = array[1]
-    botaom3.value = array[2]
-    botaom4.value = array[3]
-    if (botaoClicado.value == array[indiceCerto]){
+function clicouBotao(botaoClicado) {
+    let indexNumber = Number(index.value)
+    let indexAnswer = sequenciaResposta[Number(index.value)]
+    
+    if (botaoClicado == window["resp" + [indexNumber][indexAnswer]]){
         botaoClicado.style.backgroundColor = 'rgb(13, 220, 13)'
         botaoClicado.style.color = 'black'
-        console.log('teste')
+        console.log('acertou')
 
     }else{
         botaoClicado.style.backgroundColor = 'red'
@@ -72,18 +73,17 @@ function clicouBotao(botaoClicado,array=resp1,indiceCerto=0){
 
     document.getElementById('ProximaQuest').style.visibility = 'visible'
     document.getElementById('ProximaQuest').style.display = 'inline'
+    
     botaom1.setAttribute('disabled','disabled')
     botaom2.setAttribute('disabled','disabled')
     botaom3.setAttribute('disabled','disabled')
     botaom4.setAttribute('disabled','disabled')
-    
 }
-
 function limpaBotao(){
-    botaom1.setAttribute('enable','enable')
-    botaom2.setAttribute('enable','enable')
-    botaom3.setAttribute('enable','enable')
-    botaom4.setAttribute('enable','enable')
+    botaom1.removeAttribute('disabled')
+    botaom2.removeAttribute('disabled')
+    botaom3.removeAttribute('disabled')
+    botaom4.removeAttribute('disabled')
     botaom1.style.backgroundColor = 'white'
     botaom2.style.backgroundColor = 'white'
     botaom3.style.backgroundColor = 'white'
@@ -94,15 +94,18 @@ function limpaBotao(){
     botaom4.style.color = 'black'
 }
 
-function proximaQuestao(botaoClicado){
+function proximaQuestao(){
+    index.value = Number(index.value) + 1
+    respostaCorreta.value = sequenciaResposta[Number(index.value) - 1]
+    respostaCorreta.value = sequenciaResposta[Number(index.value) - 1]
     limpaBotao()
-    perg.innerHTML = quest2
-    ordem.innerHTML = ord2
-    botaom1.innerHTML = resp2[0]
-    botaom2.innerHTML = resp2[1]
-    botaom3.innerHTML = resp2[2]
-    botaom4.innerHTML = resp2[3]
+    perg.innerHTML = window["quest" + index.value]
+    ordem.innerHTML = window["ord" + index.value]
+    botaom1.innerHTML = window["resp" + index.value][0]
+    botaom2.innerHTML = window["resp" + index.value][1]
+    botaom3.innerHTML = window["resp" + index.value][2]
+    botaom4.innerHTML = window["resp" + index.value][3]
     document.getElementById('ProximaQuest').style.visibility = 'hidden'
     document.getElementById('ProximaQuest').style.display = 'none'
-    clicouBotao(botaoClicado,resp2,2)
+
 }
