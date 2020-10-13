@@ -62,17 +62,21 @@ function clicouBotao(botaoClicado,array=resp1,indiceCerto=0){
     if (botaoClicado.value == array[indiceCerto]){
         botaoClicado.style.backgroundColor = 'rgb(13, 220, 13)'
         botaoClicado.style.color = 'black'
+        console.log('teste')
 
     }else{
         botaoClicado.style.backgroundColor = 'red'
         botaoClicado.style.color = 'black'
+        console.log('teste')
     }
+
     document.getElementById('ProximaQuest').style.visibility = 'visible'
     document.getElementById('ProximaQuest').style.display = 'inline'
     botaom1.setAttribute('disabled','disabled')
     botaom2.setAttribute('disabled','disabled')
     botaom3.setAttribute('disabled','disabled')
     botaom4.setAttribute('disabled','disabled')
+    
 }
 
 function limpaBotao(){
@@ -98,5 +102,7 @@ function proximaQuestao(botaoClicado){
     botaom2.innerHTML = resp2[1]
     botaom3.innerHTML = resp2[2]
     botaom4.innerHTML = resp2[3]
+    document.getElementById('ProximaQuest').style.visibility = 'hidden'
+    document.getElementById('ProximaQuest').style.display = 'none'
     clicouBotao(botaoClicado,resp2,2)
 }
