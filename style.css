@@ -6,7 +6,10 @@ body {
 }
 
 h1{
-    margin-left: 33%;
+    text-align: center;
+
+    margin: auto;
+    
 }
 
 section{
@@ -50,6 +53,7 @@ button{
     position: relative;
     transition: all 400ms ease;
     align-items: center;
+ 
 }
 
 button:hover{
@@ -59,4 +63,32 @@ button:hover{
 #ProximaQuest{
     visibility: hidden;
     display: none;
+}
+
+
+button:disabled{
+    background-color: white;
+    color: black;
+    opacity: 60%;
+}
+
+button:enabled{
+    background-color: white;
+    color: black;
+}
+
+#refazer{
+    visibility: hidden;
+    display: none;
+    width: 80% !important;
+    height: 70px;
+}  
+
+#info{
+    visibility: hidden;
+    display: none;
+}
+
+a{
+    text-decoration: none;
 }
