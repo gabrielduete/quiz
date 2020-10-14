@@ -7,9 +7,7 @@ body {
 
 h1{
     text-align: center;
-
     margin: auto;
-    
 }
 
 section{
@@ -53,7 +51,7 @@ button{
     position: relative;
     transition: all 400ms ease;
     align-items: center;
- 
+
 }
 
 button:hover{
@@ -64,7 +62,6 @@ button:hover{
     visibility: hidden;
     display: none;
 }
-
 
 button:disabled{
     background-color: white;
