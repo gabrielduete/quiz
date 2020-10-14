@@ -11,16 +11,16 @@ quest9 = ["Quem inventou o World Wide Web?"]
 quest10 = ["Quem idealizou o sistema Windows?"]
 
 //Respostas correspondente a cada questão;
-resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"] // CORRETA -> 0
-resp2 = ["Margaret Hamilton","Alan Turing","Condessa de Lovelace","Bill Gates"] // CORRETA -> 2
-resp3 = ["Alan Turing","Bill Gates","Steve Jobs","Charles Babbage"] // Correta -> 0
-resp4 = ["Apple I","IBM 5150","EDVAC","Jaguar"] // CORRETA -> 1
-resp5 = ["EDVAC","Apple I","Macintosh","Jaguar"] // CORRETA -> 3
-resp6 = ["1999","1976","1981","2000"] // CORRETA -> 2
-resp7 = ["Plankalkül","COBOL","Fortran","Pascal"] // CORRETA -> 0
-resp8 = ["Margaret Hamilton","Grace Hopper","Alan Turing","Charles Babbage"] // CORRETA -> 1
-resp9 = ["Alan Turing","Bill Gates","Tim Berners-Lee","Steve Jobs"] // CORRETA -> 2
-resp10 = ["Bill Gates","Gabriel Duete","Steve Jobs","Charles Babbage"] // CORRETA -> 1
+resp1 = ["ENIAC", "EDVAC", "Macintosh", "Apple I"] 
+resp2 = ["Margaret Hamilton","Alan Turing","Condessa de Lovelace","Bill Gates"] 
+resp3 = ["Alan Turing","Bill Gates","Steve Jobs","Charles Babbage"] 
+resp4 = ["Apple I","IBM 5150","EDVAC","Jaguar"] 
+resp5 = ["EDVAC","Apple I","Macintosh","Jaguar"]
+resp6 = ["1999","1976","1981","2000"] 
+resp7 = ["Plankalkül","COBOL","Fortran","Pascal"] 
+resp8 = ["Margaret Hamilton","Grace Hopper","Alan Turing","Charles Babbage"] 
+resp9 = ["Alan Turing","Bill Gates","Tim Berners-Lee","Steve Jobs"] 
+resp10 = ["Bill Gates","Gabriel Duete","Steve Jobs","Charles Babbage"] 
 
 //Ordem da Questão;
 ord1 = ["Questão 1/10"]
@@ -79,6 +79,7 @@ function clicouBotao(botaoClicado) {
     botaom3.setAttribute('disabled','disabled')
     botaom4.setAttribute('disabled','disabled')
 }
+// Função para limpar os atributos dos botões;
 function limpaBotao(){
     botaom1.removeAttribute('disabled')
     botaom2.removeAttribute('disabled')
@@ -94,12 +95,12 @@ function limpaBotao(){
     botaom4.style.color = 'black'
 }
 
+// Função para voltar pra tela inicial do quiz;
 function refazerQuiz(){
    document.location.reload(true)
-
 }
 
-
+// Função do botão proxima, para ir pra próxima questão;
 function proximaQuestao(){
     index.value = Number(index.value) + 1
     limpaBotao()
