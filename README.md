@@ -10,7 +10,7 @@
 # 📝 Sobre
 
 O projeto **Quiz - História dos Computadores** é um site no qual 
-se passa um quiz que você deve responder algumas perguntas clicando nos botões, no qual irá aparecer outro botão para ir pra próxima pergunta. Ao finalizar 10 questões, você irá receber quantas questões acertou. Desenvolvido com o intuito de mostrar um pouco sobre a grande história dos computadores.
+se passa um quiz que você deve responder algumas perguntas clicando nos botões, no qual irá aparecer outro botão para ir pra próxima pergunta. Ao finalizar 10 questões, você irá receber quantas questões acertou. Desenvolvido com o intuito de mostrar um pouco sobre a grande história dos computadores. Recomendado acessar por um PC, para uma melhor experiência. 
 
 ## 💻Tecnologias utilizadas
 
